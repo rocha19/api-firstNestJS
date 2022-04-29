@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { CriarCategoriaDtos } from './dtos/criar-categoria.dto';
+import { CriarCategoriaDto } from './dtos/criar-categoria.dto';
 import { Categoria } from './interfaces/categoria.interface';
 import { Model } from 'mongoose';
 
@@ -11,7 +11,7 @@ export class CategoriasService {
   ) {}
 
   async criarCategoria(
-    criarCategoriaDto: CriarCategoriaDtos,
+    criarCategoriaDto: CriarCategoriaDto,
   ): Promise<Categoria> {
     const { categoria } = criarCategoriaDto;
     const categoriaEncontrada = await this.categoriaModel
@@ -23,5 +23,9 @@ export class CategoriasService {
     }
     const categoriaCriada = new this.categoriaModel(criarCategoriaDto);
     return await categoriaCriada.save();
+  }
+
+  async consultarTodasCategorias(): Promise<Array<Categoria>> {
+    return await this.categoriaModel.find().populate('jogadores').exec();
   }
 }
