@@ -36,3 +36,10 @@ lerna-debug.log*
 
 # Environment
 .env
+
+# Other
+Categorias.json
+Desafios.json
+Jogadores.json
+Partidas.json
+Rankings.json
