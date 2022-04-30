@@ -72,18 +72,4 @@ export class JogadoresService {
 
     return await this.jogadorModel.deleteOne({ _id }).exec();
   }
-
-  // private async criar(criaJogadorDto: CriarJogadorDto): Promise<Jogador> {
-  //   const jogadorCriado = new this.jogadorModel(criaJogadorDto);
-  //   return await jogadorCriado.save();
-  // }
-
-  // private async atualizar(criaJogadorDto: CriarJogadorDto): Promise<Jogador> {
-  //   return await this.jogadorModel
-  //     .findOneAndUpdate(
-  //       { email: criaJogadorDto.email },
-  //       { $set: criaJogadorDto },
-  //     )
-  //     .exec();
-  // }
 }

@@ -6,7 +6,15 @@ import { CategoriasModule } from './categorias/categorias.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.URL),
+    MongooseModule.forRoot(
+      process.env.URL,
+      //   {
+      //   useNewUrlParser: true,
+      //   useCreateIndex: true,
+      //   useUnifiedTopology: true,
+      //   useFindAndModify: false,
+      //   }
+    ),
     JogadoresModule,
     CategoriasModule,
   ],
