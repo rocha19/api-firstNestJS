@@ -8,6 +8,10 @@
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "sourceMap": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ], 
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
@@ -17,5 +21,8 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
-  }
+  },
+    "include": [
+    "src/**/*"
+  ]
 }
