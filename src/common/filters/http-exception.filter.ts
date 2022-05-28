@@ -27,7 +27,7 @@ export class AllExceptionFilter implements ExceptionFilter {
     this.logger.error(
       `Http Status: ${status} Error Message: ${JSON.stringify(message)}`,
     );
-
+  // test comment theme
     response.status(status).json({
       timestamp: new Date().toISOString(),
       path: request.url,
